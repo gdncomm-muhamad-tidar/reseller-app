@@ -4,7 +4,7 @@ import AppIcon from './AppIcon.vue';
 import type { IconName } from '@/icons';
 
 /** Floating bottom nav (frosted glass). */
-const NAV: [string, IconName, string][] = [['home', 'home', 'Beranda'], ['katalog', 'grid', 'Katalog'], ['scan', 'scanNav', 'Scan IMEI'], ['pesanan', 'box', 'Order'], ['finansial', 'wallet', 'Finansial']];
+const NAV: [string, IconName, string][] = [['home', 'home', 'Home'], ['katalog', 'grid', 'Katalog'], ['scan', 'scanNav', 'Scan IMEI'], ['pesanan', 'box', 'Order'], ['finansial', 'wallet', 'Finansial']];
 const route = useRoute();
 const router = useRouter();
 const go = (n: string) => { if (route.path !== '/' + n) router.push('/' + n); };
