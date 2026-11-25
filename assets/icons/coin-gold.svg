@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="122" height="112" viewBox="0 0 122 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="coin">
+<circle cx="60" cy="56" r="56" fill="url(#coinShadow)"/>
+<g id="Ellipse">
+<circle cx="60" cy="48" r="40" fill="#EBBF4F"/>
+</g>
+<circle id="Ellipse_2" cx="60" cy="48" r="29" fill="#FFCD00" stroke-width="2" stroke="white"/>
+<path id="Star" d="M60 32L63.9676 41.5391L74.2658 42.3647L66.4196 49.0859L68.8168 59.1353L60 53.75L51.1832 59.1353L53.5804 49.0859L45.7342 42.3647L56.0324 41.5391L60 32Z" fill="#614500"/>
+<path id="sparkle" d="M11 14L12.4849 19.5151L18 21L12.4849 22.4849L11 28L9.51508 22.4849L4 21L9.51508 19.5151L11 14Z" fill="white"/>
+<path id="sparkle_2" d="M113 6L114.909 13.0908L122 15L114.909 16.9092L113 24L111.091 16.9092L104 15L111.091 13.0908L113 6Z" fill="white"/>
+<path id="sparkle_3" d="M115 60L116.061 63.9393L120 65L116.061 66.0607L115 70L113.939 66.0607L110 65L113.939 63.9393L115 60Z" fill="white"/>
+<path id="sparkle_4" d="M4 64L4.84853 67.1515L8 68L4.84853 68.8485L4 72L3.15147 68.8485L0 68L3.15147 67.1515L4 64Z" fill="white"/>
+</g>
+<defs>
+<radialGradient id="coinShadow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(60 56) scale(56)"><stop offset="0.6" stop-color="#614500" stop-opacity="0.3"/><stop offset="1" stop-color="#614500" stop-opacity="0"/></radialGradient>
+</defs>
+</svg>

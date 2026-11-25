@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="40" height="40.0577" viewBox="0 0 40 40.0577" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="btds_ic_tier_icon">
+<g id="Vector">
+<path d="M19.9998 36.6666C29.2045 36.6666 36.6665 29.2047 36.6665 20C36.6665 10.7952 29.2045 3.33328 19.9998 3.33328C10.7951 3.33328 3.33313 10.7952 3.33313 20C3.33313 29.2047 10.7951 36.6666 19.9998 36.6666Z" fill="url(#paint0_linear_0_540)"/>
+</g>
+<path id="Vector_2" d="M25.0588 11.6667H20.0342H14.9408L8.33313 18.3522L20.0342 30.0001L31.6665 18.3522L25.0588 11.6667Z" fill="white"/>
+</g>
+<defs>
+
+<linearGradient id="paint0_linear_0_540" x1="3.33313" y1="3.33328" x2="3.20494" y2="36.6662" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1258C9"/>
+<stop offset="1" stop-color="#000208"/>
+</linearGradient>
+</defs>
+</svg>

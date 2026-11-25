@@ -1,0 +1,27 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="medallion">
+<circle id="glow" cx="100" cy="100" r="100" fill="url(#paint0_radial_0_403)"/>
+<circle id="ring" cx="100" cy="100" r="56" fill="#D6F7DA"/>
+<g id="core" filter="url(#filter0_d_0_403)">
+<circle cx="100" cy="100" r="40" fill="#1F912E"/>
+</g>
+<g id="&#240;&#159;&#133;&#145; si.check">
+<path id="vector" d="M98.1524 111.917C97.4924 111.917 96.8508 111.623 96.4108 111.109L87.7208 101.019C86.8958 100.066 87.0058 98.6162 87.9591 97.7907C88.9124 96.9652 90.3608 97.0752 91.1858 98.0292L97.9508 105.899L108.676 90.8745C109.409 89.8471 110.839 89.6086 111.866 90.3425C112.892 91.0763 113.149 92.5072 112.397 93.5346L100.022 110.944C99.6191 111.513 98.9591 111.88 98.2624 111.898C98.2258 111.898 98.1891 111.898 98.1524 111.898V111.917Z" fill="white"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_403" x="40" y="48" width="120" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="8"/>
+<feGaussianBlur stdDeviation="10"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.1 0 0 0 0 0.6 0 0 0 0 0.3 0 0 0 0.3 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_403"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_403" result="shape"/>
+</filter>
+<radialGradient id="paint0_radial_0_403" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 100) scale(100)">
+<stop stop-color="#40CC73" stop-opacity="0.35"/>
+<stop offset="1" stop-color="#40CC73" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
