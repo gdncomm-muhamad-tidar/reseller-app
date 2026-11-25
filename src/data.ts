@@ -1,47 +1,47 @@
-import { ImageSourcePropType } from 'react-native';
-import type { BadgeTone } from './ui';
+
+export type BadgeTone = 'red' | 'green' | 'blue' | 'yellow' | 'tosca' | 'magenta' | 'grey';
 
 export const IMG = {
-  a36: require('../assets/img/a36.jpg'),
-  tab: require('../assets/img/tab.jpg'),
-  watch: require('../assets/img/watch.jpg'),
-  s25fe: require('../assets/img/s25fe.jpg'),
-  buds: require('../assets/img/buds.jpg'),
-  ultra: require('../assets/img/ultra.jpg'),
-  ip16pro: require('../assets/img/ip16pro.jpg'), airpods: require('../assets/img/airpods.jpg'), ipadair: require('../assets/img/ipadair.jpg'),
-  ip16: require('../assets/img/ip16.jpg'), ip17: require('../assets/img/ip17.png'), ip17pm: require('../assets/img/ip17pm.jpg'),
-  watch11: require('../assets/img/watch11.jpg'), ipair: require('../assets/img/ipair.png'), ip17pro: require('../assets/img/ip17pro.png'),
-  catIphone: require('../assets/img/cat-iphone.png'), catIpad: require('../assets/img/cat-ipad.png'), catWatch: require('../assets/img/cat-watch.png'),
-  catMac: require('../assets/img/cat-mac.png'), catAirpod: require('../assets/img/cat-airpod.png'), catAks: require('../assets/img/cat-aksesori.png'),
-  a56: require('../assets/img/a56.jpg'),
-  flip7: require('../assets/img/flip7.jpg'),
-  trophy0: require('../assets/img/trophy0.png'),
-  trophyCheck: require('../assets/img/trophy-check.png'),
-  point: require('../assets/img/point.png'),
-  medal: require('../assets/img/medal.png'),
-  mission: require('../assets/img/mission.png'),
-  shopping: require('../assets/img/shopping.png'),
-  phone: require('../assets/img/phone.png'),
-  money: require('../assets/img/money.png'),
-  scan: require('../assets/img/scan.png'),
-  device: require('../assets/img/device.png'),
-  store: require('../assets/img/store.png'),
-  monthNext: require('../assets/img/month-next.png'),
-  cnConfetti: require('../assets/img/cn-confetti.png'),
-  routinePayments: require('../assets/img/routine-payments.png'),
-  warning: require('../assets/img/warning.png'),
-  docPaper: require('../assets/img/doc-paper.png'),
+  a36: '/img/a36.jpg',
+  tab: '/img/tab.jpg',
+  watch: '/img/watch.jpg',
+  s25fe: '/img/s25fe.jpg',
+  buds: '/img/buds.jpg',
+  ultra: '/img/ultra.jpg',
+  ip16pro: '/img/ip16pro.jpg', airpods: '/img/airpods.jpg', ipadair: '/img/ipadair.jpg',
+  ip16: '/img/ip16.jpg', ip17: '/img/ip17.png', ip17pm: '/img/ip17pm.jpg',
+  watch11: '/img/watch11.jpg', ipair: '/img/ipair.png', ip17pro: '/img/ip17pro.png',
+  catIphone: '/img/cat-iphone.png', catIpad: '/img/cat-ipad.png', catWatch: '/img/cat-watch.png',
+  catMac: '/img/cat-mac.png', catAirpod: '/img/cat-airpod.png', catAks: '/img/cat-aksesori.png',
+  a56: '/img/a56.jpg',
+  flip7: '/img/flip7.jpg',
+  trophy0: '/img/trophy0.png',
+  trophyCheck: '/img/trophy-check.png',
+  point: '/img/point.png',
+  medal: '/img/medal.png',
+  mission: '/img/mission.png',
+  shopping: '/img/shopping.png',
+  phone: '/img/phone.png',
+  money: '/img/money.png',
+  scan: '/img/scan.png',
+  device: '/img/device.png',
+  store: '/img/store.png',
+  monthNext: '/img/month-next.png',
+  cnConfetti: '/img/cn-confetti.png',
+  routinePayments: '/img/routine-payments.png',
+  warning: '/img/warning.png',
+  docPaper: '/img/doc-paper.png',
 };
 
 // Payment method logos from Figma ("Payment method logo", 34×34 frame).
 // box = [left, top, width, height] inside the frame, as placed in the design.
-export const BANK_LOGO: Record<string, { src: ImageSourcePropType; box: [number, number, number, number]; fit: 'contain' | 'cover' | 'stretch' }> = {
-  BCA: { src: require('../assets/img/bank/bca.png'), box: [0.85, 11.9, 32.3, 10.56], fit: 'stretch' },
-  Mandiri: { src: require('../assets/img/bank/mandiri.png'), box: [0.85, 11.9, 32.3, 10.56], fit: 'contain' },
-  BNI: { src: require('../assets/img/bank/bni.png'), box: [0, 11.79, 33.69, 10.43], fit: 'stretch' },
-  BRI: { src: require('../assets/img/bank/bri.png'), box: [4, 3, 27, 27], fit: 'contain' },
-  Permata: { src: require('../assets/img/bank/permata.png'), box: [4, 3, 27, 27], fit: 'contain' },
-  'CIMB Niaga': { src: require('../assets/img/bank/cimb.png'), box: [4, 3, 27, 27], fit: 'cover' },
+export const BANK_LOGO: Record<string, { src: string; box: [number, number, number, number]; fit: 'contain' | 'cover' | 'stretch' }> = {
+  BCA: { src: '/img/bank/bca.png', box: [0.85, 11.9, 32.3, 10.56], fit: 'stretch' },
+  Mandiri: { src: '/img/bank/mandiri.png', box: [0.85, 11.9, 32.3, 10.56], fit: 'contain' },
+  BNI: { src: '/img/bank/bni.png', box: [0, 11.79, 33.69, 10.43], fit: 'stretch' },
+  BRI: { src: '/img/bank/bri.png', box: [4, 3, 27, 27], fit: 'contain' },
+  Permata: { src: '/img/bank/permata.png', box: [4, 3, 27, 27], fit: 'contain' },
+  'CIMB Niaga': { src: '/img/bank/cimb.png', box: [4, 3, 27, 27], fit: 'cover' },
 };
 
 export type MissionKey = 'smart' | 'tab' | 'aks';
@@ -49,7 +49,7 @@ export type MissionKey = 'smart' | 'tab' | 'aks';
 export type ProductTag = 'promo' | 'pre' | 'pop';
 export const TAG_LABEL: Record<ProductTag, string> = { promo: 'Promo dealer', pre: 'Pre-order', pop: 'Populer' };
 export type Product = {
-  id: string; n: string; p: number; o?: number; d?: string; tag?: ProductTag; img: ImageSourcePropType;
+  id: string; n: string; p: number; o?: number; d?: string; tag?: ProductTag; img: string;
   meta: string; cat: MissionKey; mta: string; variants: string[]; colors: string[]; desc: string; stock: string;
   /** stock is internal only — never shown to dealers */
   /** credit note per unit after the buyer's IMEI is scanned (program: Rp100rb–350rb per unit) */
@@ -199,7 +199,7 @@ export const UNSCANNED = HISTORY.filter(o => o.status === 'done').flatMap(o => {
   return o.items.flatMap(l => Array.from({ length: l.qty }, () => l.id)).filter(() => skip-- <= 0);
 });
 
-export type Reward = { k: string; img: ImageSourcePropType; t: string; c: number; cat: 'cash' | 'voucher' | 'device'; photo?: boolean };
+export type Reward = { k: string; img: string; t: string; c: number; cat: 'cash' | 'voucher' | 'device'; photo?: boolean };
 export const REWARDS: Reward[] = [
   { k: 'cash5', img: IMG.money, t: 'Saldo tunai Rp500.000', c: 10000, cat: 'cash' },
   { k: 'vch', img: IMG.medal, t: 'Voucher belanja Rp100.000', c: 2000, cat: 'voucher' },
@@ -268,7 +268,7 @@ export const CBD_DISCOUNT = 500000;
 export type Brand = 'samsung' | 'apple';
 export type BrandCfg = {
   name: string; store: string; reco: string[]; trending: { id: string; noTag?: boolean }[];
-  rebuy: { id: string; drop?: string; note: string }[]; cats: [string, string, ImageSourcePropType][];
+  rebuy: { id: string; drop?: string; note: string }[]; cats: [string, string, string][];
 };
 export const BRANDS: Record<Brand, BrandCfg> = {
   samsung: {

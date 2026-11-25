@@ -1,6 +1,6 @@
 /* Credit note movements (masuk · dipakai untuk pesanan · dipakai bayar tagihan · hangus), newest first.
  * Shared by Finansial › Riwayat credit note and the full Riwayat credit note page. */
-import type { IconName } from './ui/Icon';
+import type { IconName } from './icons';
 import type { CN } from './data';
 
 export type CnEvent = { k: string; date: string; title: string; sub: string; amt: number; tone: 'in' | 'out' | 'off'; icon: IconName; order?: string; inv?: string };

@@ -1,0 +1,47 @@
+@import '@blibli/blue-design-tokens/dist/tokens-default.scss';
+
+@font-face { font-family: 'Blibli'; font-weight: 500; src: url('/fonts/TTCommons-Medium.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Blibli'; font-weight: 600; src: url('/fonts/TTCommons-DemiBold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Blibli'; font-weight: 400; src: url('/fonts/TTCommons-Regular.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Blibli'; font-weight: 700; src: url('/fonts/TTCommons-Bold.ttf') format('truetype'); font-display: swap; }
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; background: $blu-color-neutral-background-med; }
+body { font: #{$blu-text-body-2}; color: $blu-color-neutral-text-high; -webkit-font-smoothing: antialiased; }
+#app { height: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+img { -webkit-user-drag: none; }
+
+/* BLUE typography utilities (T v="…") */
+.t-h1 { font: #{$blu-text-headline-3}; }
+.t-t1 { font: #{$blu-text-title-1}; }
+.t-t2 { font: #{$blu-text-title-2}; }
+.t-s1 { font: #{$blu-text-subtitle-1}; }
+.t-s2 { font: #{$blu-text-subtitle-2}; }
+.t-b1 { font: #{$blu-text-body-1}; }
+.t-b2 { font: #{$blu-text-body-2}; }
+.t-c1 { font: #{$blu-text-caption-1}; }
+.t-lbl { font: #{$blu-text-label}; }
+.t-c2 { font: #{$blu-text-caption-2}; }
+.t-c2b { font: #{$blu-text-label-2}; }
+
+/* colour utilities */
+.c-text { color: $blu-color-neutral-text-high; }
+.c-med { color: $blu-color-neutral-text-med; }
+.c-low { color: $blu-color-neutral-text-low; }
+.c-inv { color: $blu-color-neutral-text-inv; }
+.c-info { color: $blu-color-info-text-default; }
+.c-ok { color: $blu-color-success-text-default; }
+.c-danger { color: $blu-color-danger-text-default; }
+.c-warn { color: $blu-color-alert-text-default; }
+
+/* layout utilities */
+.row { display: flex; flex-direction: row; align-items: center; gap: $blu-spacing-s; }
+.col { display: flex; flex-direction: column; }
+.grow { flex: 1; min-width: 0; }
+.between { justify-content: space-between; }
+.center { text-align: center; }
+.ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.divider { height: 1px; background: $blu-color-neutral-border-low; }
+.card { background: $blu-color-neutral-background-default; border-radius: 12px; padding: $blu-spacing-m; }
+.no-scrollbar { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
