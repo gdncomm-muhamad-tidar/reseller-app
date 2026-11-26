@@ -27,6 +27,9 @@ const router = useRouter();
 }
 .cartbar__txt { flex: 1; display: flex; flex-direction: column; }
 .cartbar__cek { height: 36px; padding: 0 16px; border-radius: 999px; border: 1px solid #fff; background: rgba(25, 34, 42, 0.3); display: flex; align-items: center; justify-content: center; }
+/* tablet: centred above the pill nav; desktop: bottom-right card (the nav is a side rail there) */
+@container phone (min-width: 600px) { .cartbar { left: 50%; right: auto; width: 480px; translate: -50% 0; } }
+@container phone (min-width: 1024px) { .cartbar { left: auto; right: 32px; bottom: calc(24px + env(safe-area-inset-bottom)); width: 360px; translate: none; } }
 .cartbar-enter-active, .cartbar-leave-active { transition: opacity 0.25s, transform 0.25s cubic-bezier(0.34, 1.4, 0.64, 1); }
 .cartbar-enter-from, .cartbar-leave-to { opacity: 0; transform: translateY(24px); }
 </style>

@@ -32,20 +32,33 @@ const idx = ref(0);
 const paused = ref(false);
 let timer: ReturnType<typeof setTimeout> | undefined;
 
+/** On wide screens 2 banners share the view (see the container query below), so a "step" is one banner's width. */
+const perView = ref(1);
+const step = (el: HTMLElement) => (el.firstElementChild as HTMLElement | null)?.offsetWidth || el.clientWidth;
+/** number of snap positions = dots */
+const stops = computed(() => Math.max(1, banners.value.length - perView.value + 1));
+
 const schedule = () => {
   clearTimeout(timer);
   const el = scroller.value;
-  if (!el || paused.value || banners.value.length < 2) return;
-  timer = setTimeout(() => el.scrollTo({ left: ((idx.value + 1) % banners.value.length) * el.clientWidth, behavior: 'smooth' }), AUTO_MS);
+  if (!el || paused.value || stops.value < 2) return;
+  timer = setTimeout(() => el.scrollTo({ left: ((idx.value + 1) % stops.value) * step(el), behavior: 'smooth' }), AUTO_MS);
 };
-const onScroll = () => {
+const measure = () => {
   const el = scroller.value;
   if (!el?.clientWidth) return;
-  idx.value = Math.min(Math.max(Math.round(el.scrollLeft / el.clientWidth), 0), banners.value.length - 1);
+  perView.value = Math.max(1, Math.round(el.clientWidth / step(el)));
+  idx.value = Math.min(Math.max(Math.round(el.scrollLeft / step(el)), 0), stops.value - 1);
 };
-watch([idx, paused, () => banners.value.length], schedule);
-onMounted(schedule);
-onBeforeUnmount(() => clearTimeout(timer));
+const onScroll = measure;
+let ro: ResizeObserver | undefined;
+watch([idx, paused, stops], schedule);
+onMounted(() => {
+  measure();
+  schedule();
+  if (scroller.value && typeof ResizeObserver !== 'undefined') { ro = new ResizeObserver(measure); ro.observe(scroller.value); }
+});
+onBeforeUnmount(() => { clearTimeout(timer); ro?.disconnect(); });
 </script>
 
 <template>
@@ -62,14 +75,14 @@ onBeforeUnmount(() => clearTimeout(timer));
         </button>
       </div>
     </div>
-    <div v-if="banners.length > 1" class="bc__dots">
-      <span v-for="(b, i) in banners" :key="b.key" class="bc__dot" :class="{ on: i === idx }" />
+    <div v-if="stops > 1" class="bc__dots">
+      <span v-for="i in stops" :key="i" class="bc__dot" :class="{ on: i - 1 === idx }" />
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.bc { display: flex; flex-direction: column; gap: 8px; }
+.bc { display: flex; flex-direction: column; gap: 8px; container-type: inline-size; }
 .bc__scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
 .bc__page { flex: none; width: 100%; padding: 0 16px; box-sizing: border-box; scroll-snap-align: start; scroll-snap-stop: always; }
 .bc__card { width: 100%; border-radius: 12px; overflow: hidden; display: flex; align-items: center; gap: 12px; padding: 0 12px 0 16px; text-align: left; cursor: pointer; &:active { opacity: 0.9; } }
@@ -78,5 +91,7 @@ onBeforeUnmount(() => clearTimeout(timer));
 .bc__photo { width: 84px; height: 84px; border-radius: 12px; background: #fff; overflow: hidden; display: flex; align-items: center; justify-content: center; flex: none; img { object-fit: contain; } }
 .bc__art { object-fit: contain; flex: none; }
 .bc__dots { display: flex; justify-content: center; gap: 4px; }
+/* wide: two banners per view; the parent drops its own gutter and pulls this in by 8px (see Home.vue) */
+@container (min-width: 640px) { .bc__page { width: 50%; padding: 0 8px; } }
 .bc__dot { height: 6px; width: 6px; border-radius: 3px; background: $blu-color-neutral-border-default; transition: width 0.2s; &.on { width: 16px; background: $blu-color-info-background-high; } }
 </style>

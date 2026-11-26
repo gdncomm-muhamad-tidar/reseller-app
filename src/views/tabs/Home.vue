@@ -127,61 +127,63 @@ const actions = computed(() => {
       <div class="hero">
         <Glow color="#0072FF" :cx="20" :cy="20" :rx="110" :ry="90" :opacity="0.2" />
         <Glow color="#1D8FFF" :cx="50" :cy="10" :rx="120" :ry="100" :opacity="0.5" right />
-        <div class="row hero__bar">
-          <button class="avatar" type="button" @pointerdown="lpStart" @pointerup="lpEnd" @pointerleave="lpEnd" @pointercancel="lpEnd" @contextmenu.prevent>
-            <span class="avatar__bg" /><img :src="IMG.store" alt="" />
-          </button>
-          <button class="grow col hero__store" type="button" @click="openBrand">
-            <span class="t-c1 c-med">Selamat pagi,</span>
-            <span class="row hero__name"><span class="t-s1 c-text">{{ brand.store }}</span><AppIcon name="chevD" :size="16" /></span>
-          </button>
-          <button class="circ" type="button" aria-label="Chat" @click="toast('Chat dengan Sales Budi belum tersedia di demo ini')"><AppIcon name="chat" /></button>
-          <button class="circ" type="button" aria-label="Notifikasi" @click="openNotif">
-            <AppIcon name="bell" />
-            <BliBadge notification class="circ__n">3</BliBadge>
-          </button>
-        </div>
-
-        <SkeletonCN v-if="switching" />
-        <div v-else class="cn">
-          <div role="button" tabindex="0" class="cn__tap" @click="openFin('cn')" @keyup.enter="openFin('cn')">
-            <div class="row">
-              <AppIcon name="cashIn" color="var(--blu-color-info-text-default)" />
-              <span class="t-c1 c-med grow">Credit note Anda</span>
-              <BliLink to="/cn-riwayat" @click.stop>Riwayat</BliLink>
-            </div>
-            <div class="cn__amt">
-              <NumberFlow class="amount" :value="shownCN" prefix="Rp" :duration="2400" continuous fade-color="#fff" @done="onCNRolled" />
-            </div>
-            <div v-if="S.cnAdded" class="cn__added" :class="{ 'cn__added--in': addedIn }">
-              <BliBadge color="green">+{{ rp(S.cnAdded) }} telah ditambahkan</BliBadge>
-            </div>
+        <div class="hero__in">
+          <div class="row hero__bar">
+            <button class="avatar" type="button" @pointerdown="lpStart" @pointerup="lpEnd" @pointerleave="lpEnd" @pointercancel="lpEnd" @contextmenu.prevent>
+              <span class="avatar__bg" /><img :src="IMG.store" alt="" />
+            </button>
+            <button class="grow col hero__store" type="button" @click="openBrand">
+              <span class="t-c1 c-med">Selamat pagi,</span>
+              <span class="row hero__name"><span class="t-s1 c-text">{{ brand.store }}</span><AppIcon name="chevD" :size="16" /></span>
+            </button>
+            <button class="circ" type="button" aria-label="Chat" @click="toast('Chat dengan Sales Budi belum tersedia di demo ini')"><AppIcon name="chat" /></button>
+            <button class="circ" type="button" aria-label="Notifikasi" @click="openNotif">
+              <AppIcon name="bell" />
+              <BliBadge notification class="circ__n">3</BliBadge>
+            </button>
           </div>
-          <div class="divider cn__div" />
-          <div class="row cn__entries">
-            <div role="button" tabindex="0" class="entry" @click="router.push('/poin')" @keyup.enter="router.push('/poin')">
-              <div class="grow col entry__txt">
-                <span class="row entry__lbl"><AppArt name="points-blibli" :width="18" /><span class="t-c1 c-med">Poin</span></span>
-                <span class="t-s1 c-text">{{ fmt(S.poin) }}</span>
+
+          <SkeletonCN v-if="switching" />
+          <div v-else class="cn">
+            <div role="button" tabindex="0" class="cn__tap" @click="openFin('cn')" @keyup.enter="openFin('cn')">
+              <div class="row">
+                <AppIcon name="cashIn" color="var(--blu-color-info-text-default)" />
+                <span class="t-c1 c-med grow">Credit note Anda</span>
+                <BliLink to="/cn-riwayat" @click.stop>Riwayat</BliLink>
               </div>
-              <AppIcon name="chev" :size="16" />
+              <div class="cn__amt">
+                <NumberFlow class="amount" :value="shownCN" prefix="Rp" :duration="2400" continuous fade-color="#fff" @done="onCNRolled" />
+              </div>
+              <div v-if="S.cnAdded" class="cn__added" :class="{ 'cn__added--in': addedIn }">
+                <BliBadge color="green">+{{ rp(S.cnAdded) }} telah ditambahkan</BliBadge>
+              </div>
             </div>
-            <div class="vsep" />
-            <div role="button" tabindex="0" class="entry" @click="router.push('/misi')" @keyup.enter="router.push('/misi')">
-              <div class="grow col entry__txt">
-                <span class="row entry__lbl"><AppIcon name="mission" :size="18" color="var(--blu-color-info-text-default)" /><span class="t-c1 c-med">Misi diikuti</span></span>
-                <span class="t-s1 c-text">{{ missionKeys.length }} misi</span>
+            <div class="divider cn__div" />
+            <div class="row cn__entries">
+              <div role="button" tabindex="0" class="entry" @click="router.push('/poin')" @keyup.enter="router.push('/poin')">
+                <div class="grow col entry__txt">
+                  <span class="row entry__lbl"><AppArt name="points-blibli" :width="18" /><span class="t-c1 c-med">Poin</span></span>
+                  <span class="t-s1 c-text">{{ fmt(S.poin) }}</span>
+                </div>
+                <AppIcon name="chev" :size="16" />
               </div>
-              <AppIcon name="chev" :size="16" />
+              <div class="vsep" />
+              <div role="button" tabindex="0" class="entry" @click="router.push('/misi')" @keyup.enter="router.push('/misi')">
+                <div class="grow col entry__txt">
+                  <span class="row entry__lbl"><AppIcon name="mission" :size="18" color="var(--blu-color-info-text-default)" /><span class="t-c1 c-med">Misi diikuti</span></span>
+                  <span class="t-s1 c-text">{{ missionKeys.length }} misi</span>
+                </div>
+                <AppIcon name="chev" :size="16" />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <SkeletonHome v-if="switching" />
-      <div v-else class="body">
-        <BannerCarousel :key="S.brand" :brand="S.brand" />
-        <section class="sec">
+      <SkeletonHome v-if="switching" class="wrap wrap--sk" />
+      <div v-else class="body wrap">
+        <BannerCarousel :key="S.brand" class="banner" :brand="S.brand" />
+        <section class="sec sec--acts">
           <div class="row">
             <div class="warnico">
               <img :src="IMG.routinePayments" alt="" class="warnico__a" />
@@ -198,7 +200,7 @@ const actions = computed(() => {
           </div>
         </section>
 
-        <section class="sec">
+        <section class="sec sec--perf">
           <Performa>
             <template #title>
               <span class="row"><span class="t-s1 c-text">Ringkasan belanja Anda</span><span class="t-b2 c-med">•  November 2026</span></span>
@@ -206,7 +208,7 @@ const actions = computed(() => {
           </Performa>
         </section>
 
-        <section class="sec">
+        <section class="sec sec--misi">
           <template v-if="S.brand === 'apple'">
             <div class="row between"><span class="t-s1 c-text">Misi Anda</span><BliLink :to="misiTo('smart')">Detail</BliLink></div>
             <div class="card mcard" role="button" tabindex="0" @click="router.push(misiTo('smart'))" @keyup.enter="router.push(misiTo('smart'))">
@@ -221,7 +223,7 @@ const actions = computed(() => {
           </template>
           <template v-else>
             <div class="row between"><span class="t-s1 c-text">Misi Anda ({{ missionKeys.length }})</span><BliLink to="/misi">Lihat semua</BliLink></div>
-            <div class="hscroll no-scrollbar">
+            <div class="hscroll hscroll--misi no-scrollbar">
               <div v-for="k in missionKeys" :key="k" class="card mcard mcard--w" role="button" tabindex="0" @click="router.push(misiTo(k))" @keyup.enter="router.push(misiTo(k))">
                 <div class="row mcard__top"><TierIcon :tier="MISSIONS[k].lvl" :size="32" /><div class="grow col act__txt"><span class="t-c1 c-med">Level {{ MISSIONS[k].L }}</span><span class="t-s2 c-text ellipsis">{{ MISSIONS[k].t }}</span></div></div>
                 <div class="col mcard__bar">
@@ -236,23 +238,23 @@ const actions = computed(() => {
           </template>
         </section>
 
-        <section class="sec">
+        <section class="sec sec--rebuy">
           <div class="row between"><span class="t-s1 c-text">Belanja lagi</span><BliLink to="/pesanan">Riwayat</BliLink></div>
-          <div class="hscroll no-scrollbar">
+          <div class="hscroll hscroll--prod no-scrollbar">
             <ProductCard v-for="r in brand.rebuy" :key="r.id" :p="PRODUCTS[r.id]" :drop="r.drop" :note="r.note" :tag="false" />
           </div>
         </section>
 
-        <section ref="recoEl" class="sec">
+        <section ref="recoEl" class="sec sec--reco">
           <div class="row between"><span class="t-s1 c-text">Produk pilihan untuk Anda</span><BliLink to="/katalog">Katalog</BliLink></div>
-          <div class="hscroll no-scrollbar">
+          <div class="hscroll hscroll--prod no-scrollbar">
             <ProductCard v-for="(id, i) in brand.reco" :key="id" :p="PRODUCTS[id]" :pulse-key="i === 0 ? pulse : undefined" />
           </div>
         </section>
 
-        <section class="sec">
+        <section class="sec sec--trend">
           <div class="row between"><span class="t-s1 c-text">Laris dibeli dealer lain</span><BliLink to="/katalog">Lihat semua</BliLink></div>
-          <div class="hscroll no-scrollbar">
+          <div class="hscroll hscroll--prod no-scrollbar">
             <ProductCard v-for="t in brand.trending" :key="t.id" :p="PRODUCTS[t.id]" :tag="!t.noTag && t.id !== 'tab'" />
           </div>
         </section>
@@ -302,4 +304,46 @@ const actions = computed(() => {
 .mcard__nums { min-width: 0; gap: 4px; align-items: baseline; }
 .hscroll { display: flex; gap: $blu-spacing-s; margin: 0 (-$blu-spacing-m); padding: 0 $blu-spacing-m; overflow-x: auto; align-items: flex-start;
   > * { flex: none; } }
+
+/* ---------- Tablet (≥600) & desktop (≥1024): container = .phone--wide (App.vue) ---------- */
+@container phone (min-width: 600px) {
+  /* hero background is full-bleed; hero content and body share one centred column */
+  .hero { padding: calc(env(safe-area-inset-top) + 16px) 0 24px; }
+  .hero__in, .wrap { position: relative; width: calc(100% - 48px); max-width: 1200px; margin: 0 auto; }
+  .wrap--sk { width: calc(100% - 16px); max-width: 1232px; } /* SkeletonHome has its own 16px gutter */
+  .avatar { width: 48px; height: 48px; border-radius: 24px; }
+  /* credit note card: amount on the left, Poin / Misi on the right */
+  .cn { display: flex; align-items: center; gap: $blu-spacing-m; padding: 20px 24px; }
+  .cn__tap { flex: 1.2; min-width: 0; }
+  .cn__div { margin: 0; width: 1px; height: 56px; }
+  .cn__entries { flex: 1; min-width: 0; margin: 0; gap: $blu-spacing-m; }
+  .amount { font-size: 28px; line-height: 32px; }
+
+  .body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 24px; row-gap: 32px; align-items: start;
+    padding: $blu-spacing-m 0 0;
+    grid-template-areas: 'banner banner' 'acts perf' 'misi misi' 'rebuy rebuy' 'reco reco' 'trend trend'; }
+  .banner { grid-area: banner; margin: 0 -8px; }
+  .sec { padding: 0; }
+  .sec--acts { grid-area: acts; } .sec--perf { grid-area: perf; } .sec--misi { grid-area: misi; }
+  .sec--rebuy { grid-area: rebuy; } .sec--reco { grid-area: reco; } .sec--trend { grid-area: trend; }
+
+  /* horizontal scrollers become wrapping grids */
+  .hscroll { display: grid; margin: 0; padding: 0; overflow: visible; gap: $blu-spacing-m; align-items: stretch; }
+  .hscroll--misi { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .hscroll--prod { grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); }
+  .mcard--w { width: auto; }
+  .hscroll--prod > * { width: auto !important; } /* ProductCard sets a fixed inline width for the phone scroller */
+}
+@container phone (min-width: 1024px) {
+  /* leave room for the vertical nav rail on the left */
+  .screen__scroll { padding-left: 112px; }
+  .hero__in, .wrap { width: calc(100% - 64px); }
+  .wrap--sk { width: calc(100% - 32px); }
+  .body { column-gap: 32px;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    grid-template-rows: auto auto 1fr auto auto auto;
+    grid-template-areas: 'banner perf' 'acts perf' 'misi perf' 'rebuy rebuy' 'reco reco' 'trend trend'; }
+  .sec--perf { position: sticky; top: 16px; }
+  .hscroll--prod { grid-template-columns: repeat(auto-fill, minmax(184px, 1fr)); }
+}
 </style>
