@@ -160,7 +160,7 @@ const onHist = (e: { order?: string; inv?: string }) => {
           <div class="card fin__list">
             <button v-for="e in hist" :key="e.k" class="fin__li" :disabled="!e.order && !e.inv" @click="onHist(e)">
               <CircleIcon :bg="e.tone === 'off' ? 'var(--blu-color-neutral-background-med)' : 'var(--blu-color-info-background-default)'">
-                <AppIcon :name="e.icon" :size="20" :color="e.tone === 'off' ? 'var(--blu-color-neutral-text-med)' : 'var(--blu-color-info-text-default)'" />
+                <AppIcon :name="e.icon" :size="20" :color="e.tone === 'off' ? 'var(--blu-color-neutral-icon-default)' : 'var(--blu-color-info-icon-default)'" />
               </CircleIcon>
               <div class="col grow"><span class="t-s2 ellipsis">{{ e.title }}</span><span class="t-c1 c-med">{{ e.sub }}</span></div>
               <span class="t-s2" :class="e.tone === 'in' ? 'c-ok' : e.tone === 'off' ? 'c-low' : 'c-text'">{{ e.amt > 0 ? '+' : '−' }}{{ rp(Math.abs(e.amt)) }}</span>
@@ -209,7 +209,7 @@ const onHist = (e: { order?: string; inv?: string }) => {
           <div class="cn__main" :class="{ off: c.st === 'expired' }">
             <div class="col cn__txt">
               <div class="row cn__amt">
-                <AppIcon :name="SRC[c.icon]" :size="16" :color="c.st === 'expired' ? 'var(--blu-color-neutral-text-low)' : 'var(--blu-color-info-text-default)'" />
+                <AppIcon :name="SRC[c.icon]" :size="16" :color="c.st === 'expired' ? 'var(--blu-color-neutral-text-low)' : 'var(--blu-color-info-icon-default)'" />
                 <span class="t-t2 cn__v" :class="{ 'c-low': c.st === 'expired' }">{{ rp(c.amt) }}</span>
               </div>
               <span class="t-c1 ellipsis" :class="{ 'c-low': c.st === 'expired' }">{{ c.t }}</span>

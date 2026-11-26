@@ -75,9 +75,9 @@ const order = () => {
     </div>
     <AppFooter>
       <div class="pdp__qty">
-        <button aria-label="Kurangi" @click="qty = Math.max(1, qty - 1)"><AppIcon name="minus" :size="16" color="var(--blu-color-info-text-default)" /></button>
+        <button aria-label="Kurangi" @click="qty = Math.max(1, qty - 1)"><AppIcon name="minus" :size="16" color="var(--blu-color-info-icon-default)" /></button>
         <span class="t-s2 pdp__qty-n">{{ qty }}</span>
-        <button aria-label="Tambah" @click="qty += 1"><AppIcon name="plus" :size="16" color="var(--blu-color-info-text-default)" /></button>
+        <button aria-label="Tambah" @click="qty += 1"><AppIcon name="plus" :size="16" color="var(--blu-color-info-icon-default)" /></button>
       </div>
       <BliButton class="grow" full-width @click="order">Pesan</BliButton>
     </AppFooter>

@@ -5,6 +5,28 @@
 @font-face { font-family: 'Blibli'; font-weight: 400; src: url('/fonts/TTCommons-Regular.ttf') format('truetype'); font-display: swap; }
 @font-face { font-family: 'Blibli'; font-weight: 700; src: url('/fonts/TTCommons-Bold.ttf') format('truetype'); font-display: swap; }
 
+/* BLUE colour tokens as CSS custom properties. Templates colour icons with var(--blu-…) (AppIcon's `color` prop),
+   but the SCSS token file only defines $variables, so without this every such icon fell back to black.
+   Icon tokens are guarded: if this token version has no $…-icon-… variable, the BLUE hex value is used. */
+:root {
+  --blu-color-neutral-text-high: #{$blu-color-neutral-text-high};
+  --blu-color-neutral-text-med: #{$blu-color-neutral-text-med};
+  --blu-color-neutral-text-low: #{$blu-color-neutral-text-low};
+  --blu-color-info-text-default: #{$blu-color-info-text-default};
+  --blu-color-success-text-default: #{$blu-color-success-text-default};
+  --blu-color-neutral-background-med: #{$blu-color-neutral-background-med};
+  --blu-color-info-background-low: #{$blu-color-info-background-low};
+  --blu-color-info-background-default: #{$blu-color-info-background-default};
+  @if global-variable-exists('blu-color-info-icon-default') { --blu-color-info-icon-default: #{$blu-color-info-icon-default}; }
+  @else { --blu-color-info-icon-default: #0072ff; }
+  @if global-variable-exists('blu-color-success-icon-default') { --blu-color-success-icon-default: #{$blu-color-success-icon-default}; }
+  @else { --blu-color-success-icon-default: #1c832a; }
+  @if global-variable-exists('blu-color-neutral-icon-default') { --blu-color-neutral-icon-default: #{$blu-color-neutral-icon-default}; }
+  @else { --blu-color-neutral-icon-default: #797f85; }
+  @if global-variable-exists('blu-color-neutral-icon-high') { --blu-color-neutral-icon-high: #{$blu-color-neutral-icon-high}; }
+  @else { --blu-color-neutral-icon-high: #{$blu-color-neutral-text-high}; }
+}
+
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html, body { margin: 0; height: 100%; background: $blu-color-neutral-background-med; }
 body { font: #{$blu-text-body-2}; color: $blu-color-neutral-text-high; -webkit-font-smoothing: antialiased; }

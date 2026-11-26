@@ -59,7 +59,7 @@ const info = (k: 'cbd' | 'net') => toast(k === 'cbd' ? 'CBD: bayar sebelum pesan
     <div class="screen__scroll co__scroll">
       <div class="card">
         <div class="row co__row">
-          <CircleIcon><AppIcon name="pin" color="var(--blu-color-info-text-default)" /></CircleIcon>
+          <CircleIcon><AppIcon name="pin" color="var(--blu-color-info-icon-default)" /></CircleIcon>
           <div class="grow">
             <div class="t-s2">{{ BRANDS[S.brand].store }} · ITC Kuningan</div>
             <div class="t-c1 c-med">Gedung Sarana Jaya, Jl. Budi Kemuliaan No.1, Gambir, Jakarta Pusat</div>
@@ -68,7 +68,7 @@ const info = (k: 'cbd' | 'net') => toast(k === 'cbd' ? 'CBD: bayar sebelum pesan
         </div>
         <div class="divider co__div" />
         <div class="row co__row">
-          <CircleIcon><AppIcon name="chat" color="var(--blu-color-info-text-default)" /></CircleIcon>
+          <CircleIcon><AppIcon name="chat" color="var(--blu-color-info-icon-default)" /></CircleIcon>
           <div class="grow">
             <div class="t-s2">Sales: Budi Santoso</div>
             <div class="t-c1 c-med">Menyetujui ±2 jam kerja</div>
@@ -102,10 +102,10 @@ const info = (k: 'cbd' | 'net') => toast(k === 'cbd' ? 'CBD: bayar sebelum pesan
         </div>
         <button class="co__cnbtn" @click="router.push('/credit-note')">
           <div class="grow co__cnbody">
-            <div class="row co__cnt"><AppIcon name="voucher" :size="20" color="var(--blu-color-info-text-default)" /><span class="t-s2 c-info">{{ selCount() ? `${selCount()} credit note dipakai` : 'Pilih credit note' }}</span></div>
+            <div class="row co__cnt"><AppIcon name="voucher" :size="20" color="var(--blu-color-info-icon-default)" /><span class="t-s2 c-info">{{ selCount() ? `${selCount()} credit note dipakai` : 'Pilih credit note' }}</span></div>
             <span class="t-c1 c-med">Cek credit note dan voucher lainnya</span>
           </div>
-          <AppIcon name="chev" :size="16" color="var(--blu-color-info-text-default)" />
+          <AppIcon name="chev" :size="16" color="var(--blu-color-info-icon-default)" />
         </button>
       </div>
 
@@ -119,12 +119,12 @@ const info = (k: 'cbd' | 'net') => toast(k === 'cbd' ? 'CBD: bayar sebelum pesan
             </div>
             <template v-if="k === 'cbd'">
               <span class="t-c1 c-med">Bayar di muka</span>
-              <div class="row co__tt"><AppIcon name="discount" :size="14" color="var(--blu-color-info-text-default)" /><span class="t-c1 c-info">Diskon {{ short(CBD_DISCOUNT) }} kalau bayar di muka</span></div>
+              <div class="row co__tt"><AppIcon name="discount" :size="14" color="var(--blu-color-info-icon-default)" /><span class="t-c1 c-info">Diskon {{ short(CBD_DISCOUNT) }} kalau bayar di muka</span></div>
             </template>
             <template v-else>
               <button class="co__dd" @click.stop="pickNet">
                 <span class="t-b2 c-med">Net {{ S.netDays }} hari</span>
-                <span class="co__chev" :class="{ 'co__chev--up': dd && sheetVisible }"><AppIcon name="chevD" :size="16" color="var(--blu-color-neutral-text-med)" /></span>
+                <span class="co__chev" :class="{ 'co__chev--up': dd && sheetVisible }"><AppIcon name="chevD" :size="16" color="var(--blu-color-neutral-icon-default)" /></span>
               </button>
               <span class="t-c1 c-med">Jatuh tempo {{ dayAfter(S.netDays) }}</span>
             </template>
@@ -147,7 +147,7 @@ const info = (k: 'cbd' | 'net') => toast(k === 'cbd' ? 'CBD: bayar sebelum pesan
     </div>
     <div class="co__bottom">
       <div class="row co__reward">
-        <AppIcon name="voucher" :size="16" color="var(--blu-color-info-text-default)" />
+        <AppIcon name="voucher" :size="16" color="var(--blu-color-info-icon-default)" />
         <span class="t-c1 c-med grow">Bisa dapat credit note <span class="t-lbl c-text">{{ short(orderCN(S.cart)) }} + {{ fmt(Math.round(total / 100000)) }}</span> poin</span>
       </div>
       <AppFooter>

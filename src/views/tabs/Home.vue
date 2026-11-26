@@ -147,7 +147,7 @@ const actions = computed(() => {
           <div v-else class="cn">
             <div role="button" tabindex="0" class="cn__tap" @click="openFin('cn')" @keyup.enter="openFin('cn')">
               <div class="row">
-                <AppIcon name="cashIn" color="var(--blu-color-info-text-default)" />
+                <AppIcon name="cashIn" color="var(--blu-color-info-icon-default)" />
                 <span class="t-c1 c-med grow">Credit note Anda</span>
                 <BliLink to="/cn-riwayat" @click.stop>Riwayat</BliLink>
               </div>

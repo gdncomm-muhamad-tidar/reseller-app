@@ -89,14 +89,14 @@ const check = () => {
             <div class="t-c1 c-med">Nomor virtual account</div>
             <div class="row">
               <span class="t-s1 grow">{{ num }}</span>
-              <button class="row va__copy" @click="copy(num.replace(/ /g, ''), 'Nomor VA')"><AppIcon name="copy" :size="16" color="var(--blu-color-info-text-default)" /><span class="t-lbl c-info">Salin</span></button>
+              <button class="row va__copy" @click="copy(num.replace(/ /g, ''), 'Nomor VA')"><AppIcon name="copy" :size="16" color="var(--blu-color-info-icon-default)" /><span class="t-lbl c-info">Salin</span></button>
             </div>
           </div>
           <div>
             <div class="t-c1 c-med">Total bayar</div>
             <div class="row">
               <span class="t-s2 grow">{{ rp(ctx.amt) }}</span>
-              <button class="row va__copy" @click="copy(String(ctx.amt), 'Total bayar')"><AppIcon name="copy" :size="16" color="var(--blu-color-info-text-default)" /><span class="t-lbl c-info">Salin</span></button>
+              <button class="row va__copy" @click="copy(String(ctx.amt), 'Total bayar')"><AppIcon name="copy" :size="16" color="var(--blu-color-info-icon-default)" /><span class="t-lbl c-info">Salin</span></button>
             </div>
           </div>
           <BliBanner status="info" full-width size="small"><span class="t-c1">Transfer sesuai total bayar. Status otomatis diperbarui 1–5 menit setelah transfer, tanpa perlu upload bukti.</span></BliBanner>
@@ -106,7 +106,7 @@ const check = () => {
           <div v-for="(sec2, i) in sections" :key="sec2.t" class="va__sec" :class="{ 'va__sec--last': i === 2 }">
             <button class="row va__head" @click="open = open === i ? -1 : i">
               <span class="grow" :class="open === i ? 't-s2' : 't-c1'">{{ sec2.t }}</span>
-              <span class="va__chev" :class="{ 'va__chev--up': open === i }"><AppIcon name="chevD" :size="open === i ? 24 : 20" color="var(--blu-color-neutral-text-high)" /></span>
+              <span class="va__chev" :class="{ 'va__chev--up': open === i }"><AppIcon name="chevD" :size="open === i ? 24 : 20" color="var(--blu-color-neutral-icon-high)" /></span>
             </button>
             <div v-if="open === i" class="va__steps">
               <div v-for="(s, j) in sec2.s" :key="j" class="va__step">

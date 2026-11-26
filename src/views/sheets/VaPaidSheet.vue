@@ -32,11 +32,11 @@ const emit = defineEmits<{ close: [] }>();
         <p class="t-c1 c-med center">{{ isOrder ? `Pesanan ${rfq} akan segera diproses.` : `${rp(amt)} untuk ${refText} sudah masuk. Limit kredit Anda kembali bertambah.` }}</p>
         <div class="paid__badges">
           <BliBadge color="blue" prominence="secondary" size="extra-small">
-            <template #item-leading><AppIcon name="pointsLine" :size="12" color="var(--blu-color-info-text-default)" /></template>
+            <template #item-leading><AppIcon name="pointsLine" :size="12" color="var(--blu-color-info-icon-default)" /></template>
             +{{ pts.toLocaleString('id-ID') }} poin
           </BliBadge>
           <BliBadge v-if="isOrder && cn > 0" color="green" prominence="secondary" size="extra-small">
-            <template #item-leading><AppIcon name="cashIn" :size="12" color="var(--blu-color-success-text-default)" /></template>
+            <template #item-leading><AppIcon name="cashIn" :size="12" color="var(--blu-color-success-icon-default)" /></template>
             +{{ short(cn) }} credit note
           </BliBadge>
         </div>

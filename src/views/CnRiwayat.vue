@@ -31,7 +31,7 @@ const go = (e: CnEvent) => {
         <div class="card hist">
           <button v-for="(e, i) in ev" :key="e.k" class="row item" :class="{ first: !i }" :disabled="!e.order && !e.inv" @click="go(e)">
             <CircleIcon :bg="e.tone === 'off' ? 'var(--blu-color-neutral-background-med)' : 'var(--blu-color-info-background-default)'">
-              <AppIcon :name="e.icon" :size="20" :color="e.tone === 'off' ? 'var(--blu-color-neutral-text-med)' : 'var(--blu-color-info-icon-default)'" />
+              <AppIcon :name="e.icon" :size="20" :color="e.tone === 'off' ? 'var(--blu-color-neutral-icon-default)' : 'var(--blu-color-info-icon-default)'" />
             </CircleIcon>
             <div class="grow col" style="gap: 2px; text-align: left"><span class="t-s2 ellipsis">{{ e.title }}</span><span class="t-c1 c-med">{{ e.sub }}</span></div>
             <span class="t-s2" :class="e.tone === 'in' ? 'c-ok' : e.tone === 'off' ? 'c-low' : 'c-text'">{{ e.amt > 0 ? '+' : '−' }}{{ rp(Math.abs(e.amt)) }}</span>
