@@ -170,7 +170,7 @@ const actions = computed(() => {
               <div class="vsep" />
               <div role="button" tabindex="0" class="entry" @click="router.push('/misi')" @keyup.enter="router.push('/misi')">
                 <div class="grow col entry__txt">
-                  <span class="row entry__lbl"><AppIcon name="mission" :size="18" color="var(--blu-color-info-text-default)" /><span class="t-c1 c-med">Misi diikuti</span></span>
+                  <span class="row entry__lbl"><AppIcon name="mission" :size="18" color="var(--blu-color-info-icon-default, #0072ff)" /><span class="t-c1 c-med">Misi diikuti</span></span>
                   <span class="t-s1 c-text">{{ missionKeys.length }} misi</span>
                 </div>
                 <AppIcon name="chev" :size="16" />
